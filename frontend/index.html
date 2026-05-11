@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Mobile Optimizations -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <title>Finezto</title>
+
+    <!-- Legacy browser support -->
+    <script>
+      // Basic feature detection for older Android
+      if (typeof Promise === "undefined") {
+        document.write(
+          '<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>'
+        );
+      }
+      if (typeof fetch === "undefined") {
+        document.write(
+          '<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js"><\/script>'
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Facebook SDK -->
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0&appId=2544106366069984"
+      nonce="FACEBOOK_NONCE"
+    ></script>
+
+    <!-- Fallback for very old browsers -->
+    <script>
+      // If module scripts aren't supported, show a message
+      if (!("noModule" in HTMLScriptElement.prototype)) {
+        document.getElementById("root").innerHTML =
+          '<div style="padding: 20px; text-align: center; font-family: Arial, sans-serif;">' +
+          "<h2>Browser Not Supported</h2>" +
+          "<p>Please update your browser to view this website.</p>" +
+          "</div>";
+      }
+    </script>
+  </body>
+</html>
